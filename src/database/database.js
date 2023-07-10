@@ -214,3 +214,38 @@ export const initDatabase = () => {
       });
     });
   };
+
+
+
+  export const buscarGastosMensais = (ano) => {
+    return new Promise((resolve, reject) => {
+      db.transaction((tx) => {
+        tx.executeSql(
+          `SELECT strftime("%m", T.data) AS mes, SUM(T.valor) AS totalGastos, (SUM(T.valor) * 100 / O.valor) AS percentualOrcamento
+          FROM Transacoes T, Orcamento O
+          WHERE  strftime("%Y", T.data) = ? AND strftime("%Y", T.data) = O.ano
+          GROUP BY mes`,
+          [ano],
+          (tx, results) => {
+            const gastosMensais = [];
+            for (let i = 0; i < results.rows.length; i++) {
+              const row = results.rows.item(i);
+              gastosMensais.push({
+                mes: row.mes,
+                totalGastos: row.totalGastos,
+                percentualOrcamento: row.percentualOrcamento,
+              });
+            }
+            resolve(gastosMensais);
+          },
+          (error) => {
+            console.log('Erro ao buscar gastos mensais:', error);
+            reject(error);
+          }
+        );
+      });
+    });
+  };
+  
+  
+  

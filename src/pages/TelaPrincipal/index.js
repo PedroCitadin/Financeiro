@@ -167,7 +167,7 @@ export default function TelaPrincipal({ navigation }) {
 
       </View>
       <View style={styles.containerOpcoes}>
-        <TouchableOpacity style={styles.btnOpcoes}>
+        <TouchableOpacity style={styles.btnOpcoes} onPress={() => navigation.navigate('Tela Relatorio')}>
           <Text style={styles.txtBtn}>Relatório anual</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.btnOpcoes} onPress={() => navigation.navigate('Tela Orcamento')}>
