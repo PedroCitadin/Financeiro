@@ -20,13 +20,13 @@ Este é um aplicativo de controle financeiro que permite aos usuários gerenciar
 1. Clone este repositório para o seu ambiente local.
 
 ```bash
-git clone https://github.com/seu-usuario/controle-financeiro.git
+git clone https://github.com/PedroCitadin/Financeiro.git
 ```
 
 2. Acesse o diretório do projeto.
 
 ```bash
-cd controle-financeiro
+cd Financeiro
 ```
 
 3. Instale as dependências do projeto.
@@ -35,15 +35,6 @@ cd controle-financeiro
 npm install
 ```
 
-## Configuração do Banco de Dados
-
-1. Certifique-se de ter o SQLite instalado em seu ambiente.
-2. No arquivo `db.js`, localize a função `initDatabase` e ajuste o nome e a localização do arquivo de banco de dados, se necessário.
-3. Execute o seguinte comando para criar as tabelas necessárias no banco de dados:
-
-```bash
-npx react-native db:create
-```
 
 ## Executando o aplicativo
 
@@ -85,9 +76,6 @@ Este é um aplicativo de exemplo e pode ser personalizado e estendido para atend
 
 Sinta-se à vontade para explorar o código-fonte, entender como as diferentes partes do aplicativo funcionam e adaptá-lo ao seu projeto.
 
-## Licença
-
-Este projeto está licenciado sob a [MIT License](LICENSE).
 
 ## Conclusão
 
