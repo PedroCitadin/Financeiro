@@ -1,79 +1,100 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Aplicativo de Controle Financeiro
 
-# Getting Started
+Este é um aplicativo de controle financeiro que permite aos usuários gerenciar suas transações e visualizar relatórios financeiros. O aplicativo foi desenvolvido usando React Native e integra um banco de dados SQLite para armazenar as informações das transações.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Funcionalidades
 
-## Step 1: Start the Metro Server
+- Registro de transações: Os usuários podem adicionar novas transações, incluindo descrição, valor e data.
+- Listagem de transações: As transações são exibidas em uma lista, mostrando a descrição, o valor e a data.
+- Exclusão de transações: Os usuários podem excluir transações existentes.
+- Relatório de gastos mensais: O aplicativo exibe um gráfico de linha mostrando os gastos totais por mês.
+- Relatório de porcentagem do orçamento: Um gráfico de barras é exibido, mostrando a porcentagem dos gastos em relação ao orçamento anual.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Pré-requisitos
 
-To start Metro, run the following command from the _root_ of your React Native project:
+- Node.js instalado
+- Ambiente de desenvolvimento React Native configurado
 
-```bash
-# using npm
-npm start
+## Instalação
 
-# OR using Yarn
-yarn start
-```
-
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
+1. Clone este repositório para o seu ambiente local.
 
 ```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
+git clone https://github.com/seu-usuario/controle-financeiro.git
 ```
 
-### For iOS
+2. Acesse o diretório do projeto.
 
 ```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+cd controle-financeiro
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+3. Instale as dependências do projeto.
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+```bash
+npm install
+```
 
-## Step 3: Modifying your App
+## Configuração do Banco de Dados
 
-Now that you have successfully run the app, let's modify it.
+1. Certifique-se de ter o SQLite instalado em seu ambiente.
+2. No arquivo `db.js`, localize a função `initDatabase` e ajuste o nome e a localização do arquivo de banco de dados, se necessário.
+3. Execute o seguinte comando para criar as tabelas necessárias no banco de dados:
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+```bash
+npx react-native db:create
+```
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+## Executando o aplicativo
 
-## Congratulations! :tada:
+Certifique-se de que você possui um ambiente de desenvolvimento React Native configurado para executar o aplicativo em um emulador ou dispositivo físico.
 
-You've successfully run and modified your React Native App. :partying_face:
+1. Inicie o servidor de desenvolvimento do React Native.
 
-### Now what?
+```bash
+npx react-native start
+```
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+2. Execute o aplicativo em um emulador ou dispositivo físico.
 
-# Troubleshooting
+```bash
+npx react-native run-android    # Para dispositivos Android
+npx react-native run-ios        # Para dispositivos iOS
+```
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+Certifique-se de que o emulador ou dispositivo esteja conectado e pronto para depuração.
 
-# Learn More
+O aplicativo será compilado e executado no emulador ou dispositivo. Você verá a tela inicial do aplicativo de controle financeiro.
 
-To learn more about React Native, take a look at the following resources:
+## Uso do Aplicativo
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Após executar o aplicativo, você pode explorar as seguintes funcionalidades:
+
+- Adicionar uma nova transação: Toque no botão de adicionar (+) e preencha os detalhes da transação, incluindo descrição, valor e data.
+- Visualizar lista de transações: A lista de transações será exibida na tela principal, mostrando a descrição, o valor e a data.
+- Excluir uma transação: Deslize para a esquerda em uma transação na lista e toque no ícone de lixeira para excluí-la.
+- Visualizar relatórios financeiros: Toque no botão de relatórios na parte inferior da tela para visualizar os gráficos de gastos mensais e porcentagem do orçamento.
+
+## Personalização
+
+Este é um aplicativo de exemplo e pode ser personalizado e estendido para atender às suas necessidades específicas. Algumas áreas que você pode considerar personalizar incluem:
+
+- Adição de mais campos às transações, como categoria, método de pagamento, etc.
+- Melhoria do design e layout das telas.
+- Implementação de recursos adicionais, como filtragem de transações, categorização, configurações de orçamento, etc.
+
+Sinta-se à vontade para explorar o código-fonte, entender como as diferentes partes do aplicativo funcionam e adaptá-lo ao seu projeto.
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
+
+## Conclusão
+
+Este é um aplicativo de controle financeiro básico desenvolvido com React Native e SQLite. Ele demonstra como registrar transações, exibir listas, excluir registros e visualizar relatórios financeiros simples.
+
+Espero que este aplicativo de exemplo seja útil para você entender e explorar o desenvolvimento de aplicativos de controle financeiro usando o React Native.
+
+Se você tiver alguma dúvida ou precisar de ajuda, não hesite em entrar em contato.
+
+Aproveite e divirta-se codificando!
