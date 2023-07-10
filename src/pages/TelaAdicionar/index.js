@@ -4,7 +4,7 @@ import CheckBox from '@react-native-community/checkbox';
 import styles from './styles';
 import DatePicker from 'react-native-date-picker';
 import { initDatabase, insertTransacao, getTransacoes } from '../../database/database';
-
+import CampoTextoPersonalizado from '../../components/CampoDeTextoCustom';
 
 export default function TelaAdicionar({ navigation }) {
   const [descricao, setDescricao] = useState('');
@@ -16,7 +16,9 @@ export default function TelaAdicionar({ navigation }) {
   function pegaGasto(){
 
     insertTransacao(descricao, valor, data);
-
+    setDescricao('')
+    setValor('')
+    setData(new Date())
   }
 
 
@@ -27,26 +29,23 @@ export default function TelaAdicionar({ navigation }) {
     <SafeAreaView style={styles.container}>
       <View style={styles.containerInterno}>
 
-      <Text style={styles.label}>Descrição:</Text>
-      <TextInput
-
-        style={styles.txtInput}
-        value={descricao}
-        onChangeText={setDescricao}
-      />
-      <Text style={styles.label}>Valor:</Text>
-      <TextInput
-      style={styles.txtInput}
+      <CampoTextoPersonalizado label={'Descrição'} value={descricao}
+        onChangeText={setDescricao}/>
+      
+      <CampoTextoPersonalizado
+        label={"Valor"}
         value={valor}
         onChangeText={setValor}
         keyboardType='numeric'
       />
+      <View style= {styles.containerData}>
       <Text style={styles.label}>Data:</Text>
       <DatePicker style={styles.seletorData}  date={data} onDateChange={setData} 
       mode='date' 
       androidVariant='nativeAndroid'
 
       />
+      </View>
 
 
 

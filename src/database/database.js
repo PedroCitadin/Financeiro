@@ -105,10 +105,10 @@ export const initDatabase = () => {
     return new Promise((resolve, reject) => {
       db.transaction((tx) => {
         tx.executeSql(
-          'SELECT * FROM Transacoes WHERE strftime("%m", data) = ? AND strftime("%Y", data) = ?',
+          'SELECT * FROM Transacoes WHERE strftime("%m", data) = ? AND strftime("%Y", data) = ? order by data desc',
           [mes.toString().padStart(2, '0'), ano.toString()],
           (tx, results) => {
-            console.log(results.rows.length);
+            
             resolve(results.rows);
           },
           (error) => {
@@ -128,7 +128,7 @@ export const initDatabase = () => {
           'SELECT * FROM Orcamento WHERE ano = ?',
           [ano],
           (tx, results) => {
-            console.log(" orcamento: ",results.rows.length);
+            
             resolve(results.rows);
           },
           (error) => {

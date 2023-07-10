@@ -68,6 +68,11 @@ export default function TelaPrincipal({ navigation }) {
     );
   };
 
+  const updateDados = () =>{
+
+    handleObterTransacoes(mes, ano)
+  }
+
 
   const handleObterTransacoes = async (mes, ano) => {
     const transacoesPromisse = await getTransacoes(mes, ano);
@@ -147,6 +152,11 @@ export default function TelaPrincipal({ navigation }) {
           <Picker.Item label="2036" value={2036} />
 
         </Picker>
+        <View>
+        <TouchableOpacity style={{width: 45}} onPress={()=>updateDados()}>
+          <Icon name='update' size={25} color={'gray'}/>
+        </TouchableOpacity>
+        </View>
       </View>
       <View style={styles.lista}>
         <FlatList

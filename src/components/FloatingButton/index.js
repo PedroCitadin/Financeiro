@@ -6,7 +6,7 @@ import { Icon } from 'react-native-elements/dist/icons/Icon';
 const FloatingButton = ({ onPress }) => {
   return (
     <TouchableOpacity style={styles.button} onPress={onPress}>
-     <Icon name='add' size = {52} color={'black'}/>
+     <Icon name='add-to-photos' size = {35} color={'white'}/>
     </TouchableOpacity>
   );
 };

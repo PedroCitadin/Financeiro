@@ -8,7 +8,7 @@ container : {
     alignItems: 'center'
 },
 seletor:{
-    width: '45%',
+    width: '100%',
    
 },
 txtBtn: {
@@ -16,6 +16,19 @@ txtBtn: {
     fontWeight: 'bold',
     color: 'white'
   },
+  SeletorContainer:{
+    marginTop: 15,
+  
+    width: '80%',
+    height: '7%',
+    elevation: 10,
+    borderWidth: 1,
+    backgroundColor: '#F2F3F4',
+    borderRadius: 10,
+    justifyContent: 'center',
+    marginBottom: 5,
+    borderColor: '#CCD1D1'
+},
   btnOpcoes: {
     borderRadius: 10,
     alignItems: 'center',

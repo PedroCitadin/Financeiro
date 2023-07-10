@@ -13,32 +13,36 @@ const styles = StyleSheet.create({
   },
 
   label:{
-    color: '#797D7F',
+    color: '#696969',
     fontSize: 18,
+    fontWeight: 'bold',
+    paddingStart: 10,
+    paddingTop: 3,
     
 
 
   },
-  txtInput: {
-    backgroundColor: '#F8F9F9',
-    fontSize: 20,
-    borderColor: 'black',
+  containerData: {
     borderWidth: 1,
-    width: 200,
-    borderRadius: 15,
-    elevation: 5,
+    width: '68%',
+    marginTop: 15,
+    borderRadius: 10,
     borderColor: '#CCD1D1',
-    color: '#797D7F'
-    
-
+    elevation: 5,
+     backgroundColor: '#F2F3F4'
   },
+
+
+
+
   containerInterno: {
     alignItems: 'center',
       justifyContent: 'center',
       width: '95%'
   },
   seletorData: {
-    width: 200
+    width: 250
+      
   },
   txtBtn: {
     fontSize: 20,

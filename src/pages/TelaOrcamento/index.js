@@ -45,6 +45,7 @@ export default function TelaOrcamento({ navigation }) {
     return (
 
         <SafeAreaView style={styles.container}>
+            <View style={styles.SeletorContainer}>
             <Picker
                 style={styles.seletor}
                 selectedValue={ano}
@@ -69,6 +70,8 @@ export default function TelaOrcamento({ navigation }) {
                 <Picker.Item label="2036" value={2036} />
 
             </Picker>
+
+            </View>
             <View style={styles.totalContainer}>
                 <Text style={styles.somaTransacoes}>Total: R${valor.toFixed(2)}</Text>
             </View>

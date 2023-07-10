@@ -4,13 +4,13 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     flex: 1,
-    padding: 0,
+    paddingTop: 10,
     backgroundColor: '#F2F3F4'
   },
   seletorContainer: {
     marginTop: 3,
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     marginBottom: 5,
     borderWidth: 1,
     width: '95%',
@@ -20,9 +20,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#F8F9F9',
     borderColor: '#CCD1D1',
     borderRadius: 10,
-
+    alignItems: 'center'
   },
   seletor: {
+    color: 'gray',
     flex: 1,
     height: 40,
   },
